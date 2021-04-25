@@ -9,6 +9,10 @@ public class Vizitka {
     private String telefon;
     private String web;
 
+    public Vizitka() {  //bezparametrický konstruktor
+    }
+
+    //public Vizitka(JMENA jmeno, FIRMA firma, ULICE ulice, OBECpsc obecPsc, String email, String telefon, String web) {
     public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web) {
         this.jmeno = jmeno;
         this.firma = firma;
@@ -23,7 +27,7 @@ public class Vizitka {
         return jmeno;
     }
 
-    public void setJmeno(String jmeno) {
+    public void setJmeno(String  jmeno) {
         this.jmeno = jmeno;
     }
 

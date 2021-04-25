@@ -10,22 +10,22 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-<div class="seznam">
+<div class="seznam" th:each="vizitka, iterStat : ${vizitky}">
     <a href="/detail">
         <div class="vizitka">
             <div class="jmeno" th:text="${vizitka.jmeno}">Dita (Přikrylová) Formánková</div>
-            <em th:if="${vizitka.jmeno} == null">neuvedeno</em>
+            <div th:if="${vizitka.jmeno} == null">neuvedeno</div>
             <div class="firma" th:text="${vizitka.firma}">Czechitas z. s.</div>
-            <em th:if="${vizitka.firma} == null">neuvedeno</em>
+            <div th:if="${vizitka.firma} == null">neuvedeno</div>
             <div class="udaje">
                 <div class="adresa" th:if="${vizitka.celaAdresa} != null" th:text="${vizitka.celaAdresa}">
-                    <em th:if="${vizitka.celaAdresa} == null">neuvedeno</em>
+                    <div th:if="${vizitka.celaAdresa} == null">neuvedeno</div>
                     <div>Václavské náměstí 837/11</div>
                     <div><span>11000</span> Praha 1</div>
                 </div>
                 <div class="kontakty">
                     <div><i class="las la-at" th:if="${vizitka.email} != null" th:text="${vizitka.email}"></i> <span>dita@czechitas.cs</span></div>
-                    <em th:if="${vizitka.email} == null">neuvedeno</em>
+                    <div th:if="${vizitka.email} == null">neuvedeno</div>
                     <div><i class="las la-phone-alt" th:if="${vizitka.telefon} != null" th:text="${vizitka.telefon}"></i> <span>+420 800123456</span></div>
                     <em th:if="${vizitka.telefon} == null">neuvedeno</em>
                     <div><i class="las la-globe" th:if="${vizitka.web} != null" th:text="${vizitka.web}"></i> <span>www.czechitas.cz</span></div>
@@ -33,8 +33,9 @@
                 </div>
             </div>
         </div>
+        <div href="/vizitky/detail" th:href="@{/vizitky/detail(id=${iterStat.index})}"class="btn btn-primary">Detail</div>
     </a>
-
+<!--
     <a href="/detail">
         <div class="vizitka">
             <div class="jmeno">Barbora Bühnová</div>
@@ -85,7 +86,7 @@
                 </div>
             </div>
         </div>
-    </a>
+    </a> -->
 </div>
 </body>
 </html>
