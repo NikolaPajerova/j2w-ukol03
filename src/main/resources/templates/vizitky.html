@@ -10,9 +10,9 @@
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
 <body>
-<div class="seznam" th:each="vizitka, iterStat : ${vizitky}">
+<div class="seznam">
     <a href="/detail">
-        <div class="vizitka">
+        <div class="vizitka" th:each="vizitka, iterStat : ${vizitky}">
             <div class="jmeno" th:text="${vizitka.jmeno}">Dita (Přikrylová) Formánková</div>
             <div th:if="${vizitka.jmeno} == null">neuvedeno</div>
             <div class="firma" th:text="${vizitka.firma}">Czechitas z. s.</div>
@@ -32,8 +32,8 @@
                     <em th:if="${vizitka.web} == null">neuvedeno</em>
                 </div>
             </div>
+            <div href="/vizitky/detail" th:href="@{/vizitky/detail(id=${iterStat.index})}"class="btn btn-primary">Detail</div>
         </div>
-        <div href="/vizitky/detail" th:href="@{/vizitky/detail(id=${iterStat.index})}"class="btn btn-primary">Detail</div>
     </a>
 <!--
     <a href="/detail">

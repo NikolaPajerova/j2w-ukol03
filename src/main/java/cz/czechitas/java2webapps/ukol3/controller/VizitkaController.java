@@ -34,8 +34,8 @@ public class VizitkaController {
 
   @GetMapping("/")
   public ModelAndView vizitky() {
-    ModelAndView modelAndView = new ModelAndView("seznam");
-    modelAndView.addObject("vizitka", vizitky);
+    ModelAndView modelAndView = new ModelAndView("vizitky");
+    modelAndView.addObject("vizitky", vizitky);
     return modelAndView;
   }
 
