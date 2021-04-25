@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="icon" type="image/png" href="/images/favicon.png">
 </head>
+
 <body>
 <div class="seznam">
-    <a href="/detail" th:each="vizitka, iterStat : ${vizitky}" th:href="@{/vizitky/detail(id=${iterStat.index})}"class="btn btn-primary">
+    <a href="/detail" th:each="vizitka, iterStat : ${vizitky}" th:href="@{/vizitky/detail(id=${iterStat.index})}">
         <div class="vizitka">
             <div class="jmeno" th:text="${vizitka.jmeno}">Dita (Přikrylová) Formánková</div>
             <div th:if="${vizitka.jmeno} == null">neuvedeno</div>
@@ -24,12 +25,12 @@
                     <div><span>11000</span> Praha 1</div>
                 </div>
                 <div class="kontakty">
-                    <div><i class="las la-at" th:if="${vizitka.email} != null" th:text="${vizitka.email}"></i> <span>dita@czechitas.cs</span></div>
-                    <div th:if="${vizitka.email} == null">neuvedeno</div>
-                    <div><i class="las la-phone-alt" th:if="${vizitka.telefon} != null" th:text="${vizitka.telefon}"></i> <span>+420 800123456</span></div>
-                    <em th:if="${vizitka.telefon} == null">neuvedeno</em>
-                    <div><i class="las la-globe" th:if="${vizitka.web} != null" th:text="${vizitka.web}"></i> <span>www.czechitas.cz</span></div>
-                    <em th:if="${vizitka.web} == null">neuvedeno</em>
+                    <div><i class="las la-at" th:if="${vizitka.email} != null" th:text="${vizitka.email}"> <span>dita@czechitas.cs</span></i></div>
+                    <div> <i class="las la-at" th:if="${vizitka.email} == null">neuvedeno</i></div>
+                    <div> <i class="las la-phone-alt" th:if="${vizitka.telefon} != null" th:text="${vizitka.telefon}"> <span>+420 800123456</span></i> </div>
+                    <div> <i class="las la-phone-alt" th:if="${vizitka.telefon} == null">neuvedeno</i></div>
+                    <div> <i class="las la-globe" th:if="${vizitka.web} != null" th:text="${vizitka.web}"> <span>www.czechitas.cz</span></div>
+                    <div> <i class="las la-globe" th:if="${vizitka.web} == null">neuvedeno</i></div>
                 </div>
             </div>
         </div>

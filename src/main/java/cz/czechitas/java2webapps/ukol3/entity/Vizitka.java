@@ -80,6 +80,12 @@ public class Vizitka {
     }
 
     public String getCelaAdresa() {
-        return ulice + " " + obecPsc;
+        if (ulice != null)
+            if (obecPsc != null)
+                return ulice + " " + obecPsc;
+            else
+                return ulice;
+        else return null;
+
     }
 }
